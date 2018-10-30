@@ -91,6 +91,9 @@ export default {
             {
               'customData.possibleVotingDate': { $exists: true },
             },
+            {
+              'customData.expectedVotingDate': { $lt: new Date() },
+            },
           ],
           currentStatus: { $nin: ['Zurückgezogen', 'Für erledigt erklärt'] },
         };
